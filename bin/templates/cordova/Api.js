@@ -24,7 +24,7 @@
  *  This workflow would not have the `package.json` file.
  */
 // Coho updates this line
-const VERSION = '9.2.1-dev';
+const VERSION = '9.2.2-dev';
 
 var path = require('path');
 

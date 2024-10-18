@@ -30,7 +30,13 @@ ext {
 
 buildscript {
     apply from: 'repositories.gradle'
-    repositories repos
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+        maven { url "https://repo.grails.org/grails/core/" }
+        repos
+    }
 
     dependencies {
         // The gradle plugin and the maven plugin have to be updated after each version of Android
@@ -51,7 +57,7 @@ apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
 group = 'org.apache.cordova'
-version = '9.2.1-dev'
+version = '9.2.2-dev'
 
 android {
     compileSdkVersion cdvCompileSdkVersion
@@ -142,9 +148,9 @@ bintray {
         licenses = ['Apache-2.0']
         labels = ['android', 'cordova', 'phonegap']
         version {
-            name = '9.2.1-dev'
+            name = '9.2.2-dev'
             released = new Date()
-            vcsTag = '9.2.1-dev'
+            vcsTag = '9.2.2-dev'
         }
     }
 }
